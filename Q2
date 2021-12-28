@@ -1,0 +1,23 @@
+
+echo "Q2 open source";
+echo "enter an integer"
+read user_input
+#echo "$user_input"
+
+if [ `expr $user_input % 2` -eq 0 ]
+then
+   
+    for((i= $user_input; i>=1; i--))
+do
+    for((j=1; j<=i; j++))
+    do
+        echo -n "* "
+    done
+    echo
+done
+
+else
+
+	echo "Value not perfect"
+fi
+
