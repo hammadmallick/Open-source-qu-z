@@ -1,0 +1,46 @@
+
+echo "Q1 open source";
+echo "enter an integer"
+read user_input
+#echo "$user_input"
+
+if [ `expr $user_input % 2` -eq 0 ]
+then
+
+	echo "Value not perfect"
+	
+else
+
+    for (( i=1;i<=$user_input ;i++))
+do
+   for (( j=$user_input;j>=i;j-- ))
+   do
+   echo -n " "
+   done
+   for (( k=1;k<=i;k++ ))
+   do
+   echo -n " *"
+   total=`expr $total + 1`
+   done
+echo ""
+done
+rev=`expr $user_input - 1`
+for (( i=$rev;i>=1;i--))
+do
+   for (( j=i;j<=$rev;j++ ))
+   do
+   if [ $j -eq $rev ]
+   then
+   echo -n " "
+   fi
+   echo -n " "
+   done
+   for (( k=1;k<=i;k++ ))
+   do
+   echo -n " *"
+   total=`expr $total + 1`
+   done
+echo ""
+done
+	echo "Diamond pattern for $user_input"
+fi
